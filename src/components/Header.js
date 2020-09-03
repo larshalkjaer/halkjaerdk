@@ -29,12 +29,14 @@ export default function Header(props) {
     
     return (
         <div className={styles.outer}>
-            <span onClick={handleClickHome} className={styles.homebutton}>
-            <span className={styles.title}>{props.title1}</span>
-            <span className={`${styles.title} ${styles.part2color}`}>{props.title2}</span>
-            </span>
-            {showBackButton && <i onClick={handleClickBack} className={`material-icons ${styles.backbutton}`}>arrow_back</i>}
-            <img onClick={handleClickGithub} className={styles.githublink} src={images.github} />
+            <nav className={styles.nav}>
+                <span onClick={handleClickHome} className={styles.homebutton}>
+                <span className={styles.title}>{props.title1}</span>
+                <span className={`${styles.title} ${styles.part2color}`}>{props.title2}</span>
+                </span>
+                {showBackButton && <i onClick={handleClickBack} className={`material-icons ${styles.backbutton}`}>arrow_back</i>}
+                <img onClick={handleClickGithub} className={styles.githublink} src={images.github} />
+            </nav>
         </div>
     );
 }

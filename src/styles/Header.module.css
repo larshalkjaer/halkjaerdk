@@ -1,9 +1,12 @@
 .outer {
     flex: 0 0;
-    display: flex;
-    align-items: center;
     background-color: #282828;
     padding: 1rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
 }
 
 .homebutton{
@@ -31,5 +34,6 @@
 .githublink {
     height: 1.5rem;
     margin-left: auto;
+    padding: 0.2rem 0;
     cursor: pointer;
 }
