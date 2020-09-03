@@ -3,12 +3,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    flex: 1 1;
+    flex: 1 1 auto;
     background-color: rgb(241, 247, 252);
  }
 
  .title {
-    flex: 0 0;
+    flex: 0 0 auto;
     font-size: 2rem;
     color: black;
     font-family: 'Quicksand', sans-serif;
@@ -19,7 +19,7 @@
 }
 
 .text {
-    flex: 0 0;
+    flex: 0 0 auto;
     font-size: 1rem;
     color: black;
     font-family: 'Alegreya', serif;
@@ -30,6 +30,6 @@
 }
 
 .chart {
-    flex: 1 1;
+    flex: 1 1 auto;
     min-height: 90vmin;
 }

@@ -42,8 +42,10 @@ export default function WeatherChart(props) {
     }
 
     return (
-        <div className={styles.outer}>
-            <LineChart title="Temperaturer, KØGE (°C)" data={weatherData} styles={props.styles} bounds={valueBounds} />
+        <div>
+            <div className={styles.outer}>
+                <LineChart title="Temperaturer, KØGE (°C)" data={weatherData} styles={props.styles} bounds={valueBounds} />
+            </div>
         </div>
     );
 }
