@@ -1,0 +1,10 @@
+.outer {
+    background-color: snow;
+    border: 5px solid #5a6d36;
+}
+
+.title {
+    color: #282828;
+    font-size: 2rem;
+    font-family: 'Mountains of Christmas', sans-serif;
+}

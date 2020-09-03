@@ -1,0 +1,40 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    background-color: #064706;
+    padding: 1rem;
+    flex: 0 1 20%;
+}
+
+.title {
+    color: snow;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 4rem;
+    font-family: 'Mountains of Christmas', sans-serif;
+}
+
+.image {
+    width: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 414px) {
+    .outer {
+        padding: 0.2rem 1rem;
+        flex-direction: row;
+        flex: 0 0 4rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        flex: 1 0;
+        text-align: left;
+    }
+    
+    .image {
+        width: 3rem;
+        order: 1;
+        flex: 0 0 3rem;
+    }
+}

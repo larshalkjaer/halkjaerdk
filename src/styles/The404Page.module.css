@@ -1,0 +1,22 @@
+.outer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+ }
+
+.title {
+    font-size: 2rem;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.image {
+    max-width: 80%;
+    max-height: 50%;
+    object-fit: contain;
+}

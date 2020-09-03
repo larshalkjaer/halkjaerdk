@@ -1,0 +1,35 @@
+.outer {
+    flex: 0 0;
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    padding: 1rem;
+}
+
+.homebutton{
+    cursor: pointer;
+}
+
+.title {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.part2color {
+    color: #14a76c;
+}
+
+.backbutton {
+    font-size: 1.8rem;
+    color: white;
+    vertical-align: bottom;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.githublink {
+    height: 1.5rem;
+    margin-left: auto;
+    cursor: pointer;
+}

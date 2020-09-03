@@ -1,0 +1,12 @@
+.outer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1 0 auto;
+}
+
+@media screen and (max-width: 414px) {
+    .outer {
+        flex-direction: column;
+    }    
+}

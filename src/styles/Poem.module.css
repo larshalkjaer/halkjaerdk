@@ -1,0 +1,22 @@
+.outer {
+    flex: 1 1;
+    padding: 1.2rem;
+    background-color: snow;
+    color: black;
+    font-size: 1.2rem;
+    font-family: 'Alegreya', serif;
+}
+
+.verse {
+    margin-bottom: 1rem;
+}
+
+.line {
+    line-height: 130%;
+}
+
+@media screen and (max-width: 414px) {
+    .outer {
+        font-size: 1rem;
+    }    
+}

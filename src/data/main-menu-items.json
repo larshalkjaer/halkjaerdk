@@ -1,0 +1,5 @@
+[
+    {"id": "portfolio", "title": "Portfolio", "image": "portfolio", "link": "http://halkjaer.dk/portfolio"},
+    {"id": "christmas", "title": "Julevers", "image": "christmas", "link": "/xmas"},
+    {"id": "lab", "title": "Eksperimenter", "image": "lab", "link": "/lab"}
+]

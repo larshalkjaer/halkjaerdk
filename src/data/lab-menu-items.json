@@ -1,0 +1,4 @@
+[
+    {"id": "lab_vejr", "title": "Vejrudsigt\n(Fetch & CanvasJS)", "image": "lab1", "link": "/lab1"},
+    {"id": "lab_mern", "title": "ToDo liste\n(MERN Stack)", "image": "lab2", "link": "/lab2"}
+]

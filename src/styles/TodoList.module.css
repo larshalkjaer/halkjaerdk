@@ -1,0 +1,66 @@
+.outer {
+	max-width: 960px; 
+    margin: 0 auto; 
+}
+
+.todoinput {
+    display: flex;
+    width: 100%;
+}
+
+.todoinputfield {
+    flex: 1 0 auto;
+    line-height: 1.8em;
+    margin: 0.5rem;
+}
+
+.submitbutton {
+    flex: 0 0 auto;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.submitbuttonicon {
+    font-size: 1rem;
+}
+
+.list {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.listbutton {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.checkmarkcol {
+    padding: 0.5rem;
+    vertical-align: middle;
+    width: 2rem;
+}
+
+.titlecol {
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+.todoeditor {
+    width: 100%;
+    resize: vertical;
+}
+
+.buttoncol {
+    padding: 0.5rem;
+    vertical-align: middle;
+    width: 2rem;
+}
+
+.row {
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+tr:nth-child(odd) {
+    background-color: #d4D9de;
+}
