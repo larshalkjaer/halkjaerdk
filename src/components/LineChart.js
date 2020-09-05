@@ -1,51 +1,71 @@
 import React, {useEffect} from "react";
-import CanvasJS from '../lib/canvasjs.react';
+import c3 from 'c3';
+import 'c3/c3.css';
 
 let linechart;
 
 export default function LineChart(props) {
+    const chartId = 'chart-container';
 
     useEffect(() => {
-        linechart = new CanvasJS.Chart(chartContainerId, chartOptions);
-        linechart.render();
+        linechart = renderChart();
     }, []);
 
     useEffect(() => {
-        if (linechart && linechart.options && (Object.keys(props.data).length > 0))
+        if (linechart && (props.data.length === 2))
         {
-            linechart.options.data[0].dataPoints = props.data;
-            linechart.render();
+            linechart.load({
+                columns: props.data
+            });
         }
     }, [props.data]);
 
-    const chartOptions = {
-        backgroundColor: 'rgba(255,255,255,0)',
-        title: {
-            text: props.title,
-            fontFamily: 'Quicksand, sans-serif',
-            fontSize: 25,
-            fontWeight: 'bold'
+    const chartdata = {
+        bindto: `#${chartId}`,
+        padding: {
+            right: 30,
         },
-        axisX: {
-            labelAngle: -90,
-            labelFontSize: 16
+        data: {
+            x: 'x',
+            xFormat: '%Y-%m-%d %H:%M:%S',
+            columns: [
+                ['x'],
+                ['temperature']
+            ],
+            names: {
+                temperature: 'Temperatur'
+            }
         },
-        axisY: {
-            labelFontSize: 16
-        },
-        data: [{
-            type: 'line',
-            dataPoints : []
-        }]
-    }
+        axis: {
+            x: {
+                type: 'timeseries',
+                localtime: true,
+                tick: {
+                    format: '%d-%m kl. %H',
+                    rotate: 60,
+                    multiline: false,
+                    culling: {
+                        max: 20
+                    }
+                }
+            },
+            y: {
+                max: 40,
+                min: -10,
+                padding: {top:0, bottom:0},
+                label: {
+                    text: '°C',
+                    position: 'outer-middle'
+                }
+            }
+        }
+    };
 
-    const chartContainerId = "canvasjs-chart-container";
-    const defaultStyles = {width: "100%", position: "relative"};
-    const propStyles = props.width ? {width: props.width} : {};
-    const containerStyles = {...defaultStyles, ...propStyles};
-    props.bounds && (chartOptions.axisY = {...chartOptions.axisY, ...props.bounds});
-    
+    function renderChart() {
+        return c3.generate(chartdata);
+    };
+
     return (
-        <div id={chartContainerId} style={containerStyles} className={props.styles}/>
+        <div id={chartId} />
     );
 }

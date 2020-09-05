@@ -17,16 +17,22 @@ export default function WeatherChart(props) {
     function getTemperatureDataList(weatherdata)
     {
         const usedHours = [0,6,12,18];
-        const usedHoursElements = weatherdata.properties.timeseries.filter(element => {
+        const selectedElements = weatherdata.properties.timeseries.filter(element => {
             var time = new Date(element.time).getUTCHours();
             return (usedHours.indexOf(time) !== -1)
+        });
+
+        const timeLabels = selectedElements.map(element => {
+            const time = new Date(element.time);
+            const label = `${time.getUTCFullYear()}-${time.getUTCMonth() + 1}-${time.getUTCDate()} ${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
+            return label;
+        });
+
+        const temperatureValues = selectedElements.map(element => {
+            return element.data.instant.details.air_temperature;
         })
 
-        return usedHoursElements.map(element => {
-            const time = new Date(element.time);
-            const label = `${time.getUTCDate()}-${time.getUTCMonth() + 1}, ${time.getUTCHours()}:00`;
-            return {label: label, y: element.data.instant.details.air_temperature};
-        })
+        return [['x', ...timeLabels], ['temperature', ...temperatureValues]];
     }
 
     const fetchData = async () => {
@@ -36,15 +42,10 @@ export default function WeatherChart(props) {
         setWeatherData(temperaturedata);
     }
 
-    const valueBounds = {
-        minimum: -10,
-        maximum: 40
-    }
-
     return (
         <div>
             <div className={styles.outer}>
-                <LineChart title="Temperaturer, KØGE (°C)" data={weatherData} styles={props.styles} bounds={valueBounds} />
+                <LineChart data={weatherData} />
             </div>
         </div>
     );
