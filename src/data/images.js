@@ -12,6 +12,7 @@ const images = {
     'xmas_5' : require('../assets/images/xmas_5.png').default,
     'xmas_6' : require('../assets/images/xmas_6.png').default,
     'xmas_7' : require('../assets/images/xmas_7.png').default,
+    'xmas_8' : require('../assets/images/xmas_8.png').default,
     'dog_slippers' : require('../assets/images/dog-cannot-find-slippers.jpg').default
 }
 

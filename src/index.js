@@ -11,12 +11,15 @@ import LabPage from "./pages/LabPage.js";
 import LabPage1 from "./pages/LabPage1";
 import LabPage2 from "./pages/LabPage2";
 import The404Page from "./pages/The404Page.js";
+import sharedData from "./data/shared-data.js";
 
 function IndexPage() {
+  sharedData.showmode = getShowMode();
+
   return (
     <HashRouter>
       <Header title1="halkjaer" title2=".dk" />
-      <Switch>
+        <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/xmas" component={XmasPage} />
           <Route path="/xmaspoem/:year" component={XmasPoemPage} />
@@ -29,4 +32,13 @@ function IndexPage() {
   );
 }
 
-ReactDOM.render(<IndexPage />, document.getElementById("root"));
+function getShowMode()
+{
+    const uri = window.location.search; 
+    const params = new URLSearchParams(uri);
+    const showparam = params.get("show") || '';
+    const showmode = ['cv','li'].includes(showparam.toLowerCase()) ? showparam.toLowerCase() : '';
+    return showmode;
+}
+
+ReactDOM.render(<IndexPage />, document.getElementById('root'));
